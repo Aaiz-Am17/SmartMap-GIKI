@@ -1,7 +1,7 @@
 # 🗺️ Smart GIKI Navigator  
 ### 🎯 Vision + Voice Navigation for Campus Buildings using AI & Google Maps  
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/Smart-GIKI-Navigator?style=social)](https://github.com/yourusername/Smart-GIKI-Navigator/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/Aaiz-Am17/Smart-GIKI-Navigator?style=social)](https://github.com/Aaiz-Am17/Smart-GIKI-Navigator/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 ![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)

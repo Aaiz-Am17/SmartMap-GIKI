@@ -1,9 +1,9 @@
-🧭 Smart GIKI Navigator – Vision & Voice Guided Campus Mapping  
-🎯 A Location-Aware Navigation Demo Without GPS – Built with MobileNetV2, Speech Recognition & Google Maps API  
-License: MIT • Python • Streamlit • TorchVision • gTTS • Google Maps API  
+##🧭 Smart GIKI Navigator – Vision & Voice Guided Campus Mapping  
+##🎯 A Location-Aware Navigation Demo Without GPS – Built with MobileNetV2, Speech Recognition & Google Maps API  
+## License: MIT • Python • Streamlit • TorchVision • gTTS • Google Maps API  
 
-🎥 Your camera becomes your compass.  
-🧠 This AI-powered app locates you using a photo, takes your voice as destination input, and gives real-time walking directions — all without relying on GPS.  
+##🎥 Your camera becomes your compass.  
+##🧠 This AI-powered app locates you using a photo, takes your voice as destination input, and gives real-time walking directions — all without relying on GPS.  
 
 ---
 

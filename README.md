@@ -1,174 +1,159 @@
-# 🧭 Smart GIKI Navigator – Vision & Voice Guided Campus Mapping  
-## 🎯 A Location-Aware Navigation Demo Without GPS  
-**Built with:** MobileNetV2 • Speech Recognition • Google Maps API  
-**License:** MIT | Python | Streamlit | TorchVision | gTTS  
+# 🗺️ Smart GIKI Navigator  
+### 🎯 Vision + Voice Navigation for Campus Buildings using AI & Google Maps  
+
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/Smart-GIKI-Navigator?style=social)](https://github.com/yourusername/Smart-GIKI-Navigator/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![MobileNetV2](https://img.shields.io/badge/MobileNetV2-Image%20Classification-success?logo=pytorch)
+![GoogleMaps](https://img.shields.io/badge/API-Google%20Maps-blue?logo=googlemaps)
 
 ---
 
-🎥 **Your camera becomes your compass.**  
-🧠 This AI-powered app locates you using a photo, takes your voice as destination input, and gives real-time walking directions — all without relying on GPS.
+🎯 **Navigate GIKI’s campus visually and vocally — without GPS.**  
+📍 Upload a photo to detect your location and speak your destination — the app handles the rest using AI and Google Maps.
 
 ---
 
-## 💡 Project Overview & Motivation  
+## 💡 Project Overview & Motivation
+  
+How do you navigate when GPS isn’t available, like deep inside campuses or buildings?  
+**Smart GIKI Navigator** is a vision-driven campus navigation assistant that tackles just that — an AI-based demo designed to visually recognize where you are and guide you to where you need to go.
 
-How do you navigate when GPS isn’t available — like deep inside campuses or academic blocks?
+Built as a final project for our CV/NLP course, this system uses:
+- **Image-based classification** to detect your location from a photo  
+- **Voice commands** to understand your destination  
+- **Google Maps API** to provide step-by-step walking directions  
+- **Text-to-speech** to speak each navigation step aloud
 
-**Smart GIKI Navigator** tackles that by combining computer vision, natural language processing, and real-world map APIs. This demo application was developed for the CV & NLP course and is capable of:
-
-- Detecting your location visually via a **MobileNetV2 image classifier**
-- Taking **voice input** to extract your destination
-- Generating **step-by-step walking directions** using Google Maps
-- Speaking those steps aloud using **gTTS (text-to-speech)**
-
-Whether you’re a student, visitor, or just exploring campus, this tool acts like your personal AR navigation assistant.
-
----
-
-## ✨ Key Features  
-
-- 🔍 **Visual Location Detection**  
-  Upload a building photo → AI classifies your current location.
-
-- 🎙️ **Voice Navigation**  
-  Speak your destination → system extracts & understands the command.
-
-- 🗺️ **Google Maps Step-by-Step Directions**  
-  Uses coordinates + Maps API to calculate walking route.
-
-- 🔊 **Audio Directions**  
-  Each direction is spoken aloud using gTTS.
-
-- 🖥️ **Streamlit Web Interface**  
-  Fully interactive — no code or CLI required.
+It's a smart, voice-guided assistant — optimized for GIKI, but adaptable anywhere.
 
 ---
 
-## 🚀 How It Works  
+## ✨ Key Features
 
-1. **Upload an Image**  
-   → Model classifies which GIKI building you're in.
+📸 **Visual Place Detection**  
+Upload a photo and let the MobileNetV2-based classifier identify your current building.
 
-2. **Speak or Type Your Destination**  
-   → Voice command is parsed using speech recognition + keyword mapping.
+🎙️ **Voice Command Support**  
+Speak your destination — no typing needed.
 
-3. **Generate Directions**  
-   → API fetches walking instructions from your current location to the destination.
+🗺️ **Live Directions from Google Maps API**  
+Generates walking instructions based on detected coordinates.
 
-4. **Listen & Follow**  
-   → Steps are displayed *and* spoken in real-time.
+🔊 **Audio Navigation**  
+Each direction is narrated using text-to-speech — ideal for on-the-go users.
+
+🖥️ **Streamlit GUI**  
+Simple, clean interface that anyone can use.
+
+🧠 **Modular AI Utilities**  
+Clean code structure for CV, NLP, and navigation logic.
 
 ---
 
-## 📁 Project Structure  
+## 🚀 How It Works
+
+1. Upload a photo of where you are
+2. App uses MobileNetV2 to classify the building
+3. Speak or type your desired destination
+4. App fetches walking directions via Google Maps API
+5. Directions are read aloud, step-by-step
+
+---
+
+## 📁 Project Structure
 
 Smart-GIKI-Navigator/
-├── app-base.py # Streamlit main app
-├── train_classifier.py # Training script for MobileNetV2
-├── .env # Google Maps API key (DO NOT COMMIT)
+├── app-base.py # Streamlit app (main interface)
+├── train_classifier.py # Trains MobileNetV2 location classifier
+├── .env # Stores your Google Maps API key (not public)
 ├── static/
-│ └── audio/ # Voice instruction files
+│ └── audio/ # Stores generated voice files
 ├── utils/
-│ ├── CV_utils.py # Visual location classifier
-│ ├── voice_utils.py # Voice input and TTS
-│ └── map_utils.py # Google Maps API interface
+│ ├── CV_utils.py # Image classification (MobileNetV2 + GIKI landmarks)
+│ ├── voice_utils.py # Voice input & gTTS text-to-speech
+│ └── map_utils.py # Google Maps API integration
 ├── models/
-│ └── building_classifier.pth # Saved PyTorch model
-├── requirements.txt # Python dependencies
+│ └── building_classifier.pth # Saved PyTorch model weights
+├── requirements.txt # Project dependencies
 ├── LICENSE # MIT License
-└── README.md # This file
+└── README.md # You're reading it
 
-yaml
-Copy
-Edit
 
 ---
+
 
 ## 🔒 API Keys & Model Notes  
 
 - **Google Maps API**  
-  Store your API key in a `.env` file:
-  ```env
-  GOOGLE_MAPS_API_KEY=YOUR_API_KEY_HERE
-⚠️ Make sure to add .env to .gitignore before pushing to GitHub!
+  Add your API key to a `.env` file like this:  
+GOOGLE_MAPS_API_KEY=YOUR_API_KEY_HERE
 
-Model Checkpoint
-The file building_classifier.pth stores the trained MobileNetV2 model that detects 12 different GIKI buildings.
 
-🛠️ Setup & Installation
-1. Clone the Repository
-bash
-Copy
-Edit
+- **Image Classifier Model**  
+The model (`building_classifier.pth`) classifies photos into one of GIKI’s key buildings (e.g., FCSE, FME, Library).  
+You can retrain using your own dataset via `train_classifier.py`.
+
+---
+
+## 🛠️ Setup and Installation  
+
+### 1. Clone the Repository  
+```
 git clone https://github.com/yourusername/Smart-GIKI-Navigator.git
 cd Smart-GIKI-Navigator
-2. Create Virtual Environment (Recommended)
-bash
-Copy
-Edit
+```
+### 2. Create Virtual Environment (Recommended)
+```
 python -m venv venv
 # Activate:
-# On Windows:
+# Windows:
 venv\Scripts\activate
-# On macOS/Linux:
+# macOS/Linux:
 source venv/bin/activate
-3. Install Dependencies
-bash
-Copy
-Edit
+```
+### 3. Install Dependencies
+'''
 pip install -r requirements.txt
-4. Add Your API Key
-Create a file named .env in the root directory:
-
-env
-Copy
-Edit
+'''
+### 4. Add Your Google Maps API Key
+Create a file .env in the root folder with this line:
+```
 GOOGLE_MAPS_API_KEY=YOUR_API_KEY_HERE
-5. Run the App
-bash
-Copy
-Edit
+```
+### 5. Run the App
+```
 streamlit run app-base.py
-🧪 Train Your Own Model
-To retrain the MobileNetV2 image classifier:
+```
+### 🧪 Train Your Own Model
+To retrain the location classifier:
 
-Organize images into class-labeled folders like:
-data/Library/, data/FCSE/, etc.
+Organize building photos into class-labeled folders under a dataset directory
 
-Update the DATA_DIR path inside train_classifier.py
+Update the DATA_DIR path in train_classifier.py accordingly
 
 Run:
-
-bash
-Copy
-Edit
+```
 python train_classifier.py
-New model will be saved at models/building_classifier.pth
+```
+Your new weights will be saved to models/building_classifier.pth
 
-🙋‍♂️ Contributing
-Pull requests are welcome!
-To contribute:
+## 🙋‍♂️ Contributing
+Contributions are welcome!
+Fork the repo → make a branch → submit a PR!
 
-Fork this repository
+## 📜 License
+This project is licensed under the MIT License.
+Feel free to reuse or adapt — just give credit where due.
 
-Create a feature branch
+## 👥 Credits
+Developed by Aaiz Mohsin (BS AI, GIKI) as part of the CV & NLP course project (Semester 6)
+Grateful to our instructors and GIKI for their guidance.
 
-Make your changes
+## 🤝 Let’s Connect
+## 💬 Feedback, improvements, or collaboration ideas?
+##📫[LinkedIn](https://www.linkedin.com/in/aaizmohsin)
+## 🌐 Drop a ⭐ if you found this helpful!
 
-Submit a pull request with a clear explanation
 
-📜 License
-This project is released under the MIT License.
-Feel free to reuse, remix, and share — just credit the authors.
-
-👥 Credits
-Developed by Aaiz Mohsin
-🎓 BS Artificial Intelligence – GIKI (2022–2026)
-🧠 Final Project for CV & NLP (6th Semester)
-
-Huge thanks to faculty, teammates, and every friend whose photo made this demo possible!
-
-🌐 Let’s Connect
-💻 GitHub – Aaiz-Am17
-
-💬 Suggestions? Feedback? Drop a ⭐ if you liked it!

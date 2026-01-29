@@ -64,24 +64,23 @@ Clean code structure for CV, NLP, and navigation logic.
 
 ## 📁 Project Structure
 
+```text
 Smart-GIKI-Navigator/
-
-├── app-base.py # Streamlit app (main interface)
-├── train_classifier.py # Trains MobileNetV2 location classifier
-├── .env # Stores your Google Maps API key (not public)
+├── app-base.py              # Streamlit app (main interface)
+├── train_classifier.py      # Trains MobileNetV2 location classifier
+├── .env                     # Stores Google Maps API key (not public)
 ├── static/
-│ └── audio/ # Stores generated voice files
+│   └── audio/               # Stores generated voice files
 ├── utils/
-│ ├── CV_utils.py # Image classification (MobileNetV2 + GIKI landmarks)
-│ ├── voice_utils.py # Voice input & gTTS text-to-speech
-│ └── map_utils.py # Google Maps API integration
+│   ├── CV_utils.py          # Image classification (MobileNetV2 + GIKI landmarks)
+│   ├── voice_utils.py       # Voice input & gTTS text-to-speech
+│   └── map_utils.py         # Google Maps API integration
 ├── models/
-│ └── building_classifier.pth # Saved PyTorch model weights
-├── requirements.txt # Project dependencies
-├── LICENSE # MIT License
-└── README.md # You're reading it
-
-
+│   └── building_classifier.pth # Saved PyTorch model weights
+├── requirements.txt         # Project dependencies
+├── LICENSE                  # MIT License
+└── README.md                # Project documentation
+```
 ---
 
 

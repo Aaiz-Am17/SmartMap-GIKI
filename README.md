@@ -65,8 +65,8 @@ Clean code structure for CV, NLP, and navigation logic.
 ## 📁 Project Structure
 
 Smart-GIKI-Navigator/
-├── app-base.py # Streamlit app (main interface)
 
+├── app-base.py # Streamlit app (main interface)
 ├── train_classifier.py # Trains MobileNetV2 location classifier
 ├── .env # Stores your Google Maps API key (not public)
 ├── static/

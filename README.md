@@ -101,7 +101,7 @@ You can retrain using your own dataset via `train_classifier.py`.
 
 ### 1. Clone the Repository  
 ```
-git clone https://github.com/yourusername/Smart-GIKI-Navigator.git
+git clone https://github.com/Aaiz-Am17/Smart-GIKI-Navigator.git
 cd Smart-GIKI-Navigator
 ```
 ### 2. Create Virtual Environment (Recommended)
